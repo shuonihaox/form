@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>xrk-form</title>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <style>
+table{text-align: center;}
+table th{text-align: center;}
+table tr{text-align: center;}
+table td{position: relative;}
+table td :hover{display: }
+#change{width:200px;height:300px;border:1px solid black;position: absolute;left:50%;top:50%;margin-left: -100px;margin-top: -150px;}
+#change span{width:60px;display: inline-block;text-align: center;padding: 10px;}
+#change select{width: 100px;}
+#change select option{text-align: center;}
+.mt{margin-top:50px;}
+#btn{margin: 26px 0px 0px 70px;}
+ </style>
+ <script src="jquery.js"></script>
+</head>
+<body> 
+
+<div id="change">
+	<div id="name" class="mt">
+		<span>课名</span>
+		<select>
+			<option value="素描班">飞机班</option>
+			<option value="书法班">书法班</option>
+			<option value="手工班">手工班</option>
+			<option value="水彩班">水彩班</option>
+			<option value="提高班">提高班</option>
+			<option value="进阶班">进阶班</option>
+		</select>
+	</div>
+	<div id="start">
+		<span>开始</span>
+		<select>
+			<option>8:00</option>
+			<option>9:00</option>
+			<option>10:00</option>
+			<option>12:00</option>
+		</select>
+	</div>
+	<div id="end">
+		<span>结束</span>
+		<select>
+			<option>10:00</option>
+			<option>11:00</option>
+			<option>12:00</option>
+			<option>14:00</option>
+			<option>15:00</option>
+			<option>16:00</option>
+			<option>17:00</option>
+		</select>
+	</div>
+	<div id="week">
+		<span>星期</span>
+		<select>
+			<option>星期一</option>
+			<option>星期二</option>
+			<option>星期三</option>
+			<option>星期四</option>
+			<option>星期五</option>
+			<option>星期六</option>
+			<option>星期日</option>
+		</select>
+	</div>
+	<button type="button" value="保存" id="btn">保存</button>
+</div>
+<script>
+	$(function(){
+		var name1=$("#name").find("option:selected").text();
+		var start1=$("#start").find("option:selected").text();
+		var end1=$("#end").find("option:selected").text();
+		var week1=$("#week").find("option:selected").text();
+		$.get("http://localhost/xrkapi/lession/add",{name:name1,start:start1,end:end1,week:week1},function(json){
+			console.log(json)
+	})
+})
+
+
+</script>
+</body>
+</html>

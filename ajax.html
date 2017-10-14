@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>ajax</title>
+</head>
+<body>
+	<script src="jquery.js"></script>
+<script>
+$(function(){
+	$.getJSON("http://localhost/xrkapi/lession/list",function(json){
+		console.log(json)
+	})
+
+
+	// $.get("http://localhost/xrkapi/lession/add",{name:'b1',start:'',end:'',week:"2"},function(json){
+	// 	console.log(json)
+	// })
+})
+ 
+</script>
+</body>
+</html>
+http://localhost/xrkapi/lession/list
+http://localhost/xrkapi/lession/add
